@@ -7,7 +7,7 @@ export const B2_A1_MAIG26_LECTURES = {
   {
     "id": "B2_MAIG26_L1",
     "titol": "Tot allò que no / Tot allò que sí",
-    "pdf": "/docs/lectures/B2_a1_maig26_l1.pdf",
+    "pdf": "./docs/lectures/B2_a1_maig26_l1.pdf",
     "preguntes": [
       {
         "numero": 11,
@@ -69,7 +69,7 @@ export const B2_A1_MAIG26_LECTURES = {
   {
     "id": "B2_MAIG26_L2",
     "titol": "La negror plana sobre la blanca flor",
-    "pdf": "/docs/lectures/B2_a1_maig26_l2.pdf",
+    "pdf": "./docs/lectures/B2_a1_maig26_l2.pdf",
     "preguntes": [
       {
         "numero": 16,
