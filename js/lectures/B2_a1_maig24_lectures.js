@@ -10,7 +10,7 @@ export const B2_A1_MAIG24_LECTURES = {
     {
       "id": "B2_MAIG24_L1",
       "titol": "Posa-hi salsa!",
-      "pdf": "/docs/lectures/B2_a1_maig24_l1.pdf",
+      "pdf": "./docs/lectures/B2_a1_maig24_l1.pdf",
       "preguntes": [
         {
           "numero": 11,
@@ -72,7 +72,7 @@ export const B2_A1_MAIG24_LECTURES = {
     {
       "id": "B2_MAIG24_L2",
       "titol": "Museu del Calçat i de la Indústria",
-      "pdf": "/docs/lectures/B2_a1_maig24_l2.pdf",
+      "pdf": "./docs/lectures/B2_a1_maig24_l2.pdf",
       "preguntes": [
         {
           "numero": 16,
