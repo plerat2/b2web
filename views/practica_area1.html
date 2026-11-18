@@ -1,0 +1,187 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap');
+
+#a1-root{
+  font-family:'DM Sans',sans-serif;
+  min-height:100vh;
+  background:radial-gradient(circle at top,#0f1c2e,#081427 65%);
+  color:#fff;
+}
+
+/* ───────── Header ───────── */
+.a1-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  padding:2rem 2.5rem 1.2rem;
+}
+
+.a1-title{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(2.2rem,5vw,3.2rem);
+  font-weight:800;
+  line-height:1;
+}
+
+.a1-sub{
+  font-size:.75rem;
+  letter-spacing:.18em;
+  opacity:.6;
+  margin-top:.35rem;
+  text-transform:uppercase;
+}
+
+.a1-actions a{
+  font-size:.8rem;
+  font-weight:700;
+  padding:.45rem .9rem;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  text-decoration:none;
+}
+
+/* ───────── Legend (coherent amb Àrea 2, apta per a daltònics) ───────── */
+.a1-legend{
+  max-width:1000px;
+  margin:0 auto;
+  padding:0 2.5rem 1.15rem;
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+  align-items:center;
+  opacity:.98;
+}
+
+.legend-pill{
+  display:inline-flex;
+  gap:.55rem;
+  align-items:center;
+  padding:.48rem .95rem;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.07);
+  font-size:.92rem;
+  font-weight:700;
+}
+
+.legend-dot{
+  width:14px;height:14px;
+  border-radius:50%;
+  box-shadow:0 0 0 2px rgba(255,255,255,.10), 0 6px 14px rgba(0,0,0,.35);
+}
+
+/* Pendent: porpra · Fet: ambre/taronja · Assolit: cian/blau */
+.dot-default{ background:linear-gradient(145deg,#7c3aed,#a855f7); }
+.dot-done{ background:linear-gradient(145deg,#f59e0b,#f97316); }
+.dot-assolit{ background:linear-gradient(145deg,#06b6d4,#0ea5e9); }
+
+/* ───────── Grid (JS hi pinta les convocatòries) ───────── */
+#a1List{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1.8rem;
+  padding:1.15rem 2.5rem 3rem;
+  max-width:1000px;
+  margin:0 auto;
+}
+
+@media (max-width:720px){
+  #a1List{ grid-template-columns:1fr; }
+}
+
+/* ───────── Cards ───────── */
+#a1List a{
+  position:relative;
+  border-radius:28px;
+  padding:2.2rem 2.1rem;
+  min-height:240px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  text-decoration:none;
+  color:#fff;
+  /* Base coherent amb convocatòries (porpra) */
+  background:linear-gradient(145deg,#7c3aed,#4f46e5);
+  box-shadow:0 28px 70px rgba(0,0,0,.45);
+  transition:transform .28s ease, box-shadow .28s ease, filter .28s ease;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.10);
+}
+
+#a1List a::after{
+  content:'';
+  position:absolute;
+  top:-60px;
+  right:-60px;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+}
+
+#a1List a:hover{
+  transform:translateY(-12px) scale(1.04);
+  box-shadow:0 50px 110px rgba(0,0,0,.65);
+  filter:brightness(1.06);
+}
+
+/* ───────── Estat: fet/assolit (molt visible, sense repintar la targeta) ───────── */
+#a1List a[data-status="fet"]{
+  outline:5px solid rgba(245,158,11,.95);
+  outline-offset:4px;
+}
+
+#a1List a[data-status="assolit"]{
+  outline:5px solid rgba(6,182,212,.95);
+  outline-offset:4px;
+}
+
+/* ✓ automàtic */
+#a1List a[data-status="fet"]::before,
+#a1List a[data-status="assolit"]::before{
+  content:"✓";
+  position:absolute;
+  top:14px;
+  right:14px;
+  width:34px;
+  height:34px;
+  border-radius:999px;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:1.05rem;
+  background:rgba(0,0,0,.28);
+  border:1px solid rgba(255,255,255,.22);
+  box-shadow:0 10px 24px rgba(0,0,0,.35);
+}
+
+/* Petites tipografies dins targeta */
+.a1-card-title{ font-family:'Syne',sans-serif; font-size:1.2rem; font-weight:800; line-height:1.2; }
+.a1-card-sub{ font-size:.82rem; opacity:.9; }
+.a1-card-meta{ font-size:.86rem; opacity:.92; margin-top:.9rem; }
+.a1-card-cta{ font-size:.78rem; font-weight:800; opacity:.92; margin-top:1.2rem; }
+</style>
+
+<div id="a1-root">
+  <header class="a1-header">
+    <div>
+      <div class="a1-title">Pràctica · Àrea 1 (Oral)</div>
+      <div class="a1-sub">Blocs de 5 + 5 (avaluació immediata)</div>
+    </div>
+    <div class="a1-actions">
+      <a href="#/practica">Enrere</a>
+    </div>
+  </header>
+
+  <!-- Llegenda (coherent amb Àrea 2) -->
+  <div class="a1-legend">
+    <span class="legend-pill"><span class="legend-dot dot-default"></span> Pendent</span>
+    <span class="legend-pill"><span class="legend-dot dot-done"></span> Fet</span>
+    <span class="legend-pill"><span class="legend-dot dot-assolit"></span> Assolit (≥60%)</span>
+  </div>
+
+  <!-- JS HI PINTA LES CONVOCATÒRIES -->
+  <div id="a1List"></div>
+</div>

@@ -1,0 +1,161 @@
+<style>
+/* ───────── Base ───────── */
+.admin-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.student-card {
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  border-radius: 18px;
+  padding: 16px 18px;
+}
+
+.student-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.student-email {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.student-meta {
+  font-size: .8rem;
+  opacity: .7;
+}
+
+/* ───────── Estat ───────── */
+/* ───────── Badge base ───────── */
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .32rem .75rem;
+  border-radius: 999px;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+
+/* ✅ ASSOLIT (≥60%) — Blau */
+.badge-ok {
+  background: rgba(59,130,246,.22);       /* blue-500 */
+  border: 1.5px solid rgba(59,130,246,.5);
+  color: #bfdbfe;                         /* blue-200 */
+}
+
+/* ⚠️ A REFORÇAR (<60%) — Ambre més visible */
+.badge-no {
+  background: rgba(245,158,11,.3);        /* amber-500 */
+  border: 2px solid rgba(245,158,11,.6);
+  color: #fde68a;
+  font-size: .8rem;                       /* una mica més gran */
+  box-shadow: 0 0 0 2px rgba(245,158,11,.18);
+}
+
+/* 🟦 NEUTRE / INFORMATIU — Gris suau */
+.badge-neutral {
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.25);
+  color: rgba(255,255,255,.75);
+  font-weight: 700;
+}
+
+/* ───────── Progress ───────── */
+.progress {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.12);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.progress.ok span {
+  background: linear-gradient(
+    135deg,
+    rgba(59,130,246,.95),
+    rgba(37,99,235,.9)
+  );
+}
+
+.progress.no span {
+  background: linear-gradient(
+    135deg,
+    rgba(245,158,11,.9),
+    rgba(217,119,6,.85)
+  );
+}
+
+/* ───────── Detall ───────── */
+.student-detail {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+
+.attempt-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: .8rem;
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(255,255,255,.08);
+}
+
+.attempt-row:last-child {
+  border-bottom: none;
+}
+
+.attempt-ok {
+  color: #93c5fd;
+  font-weight: 700;
+}
+
+.attempt-no {
+  color: #fde68a;
+  font-weight: 700;
+}
+
+.toggle-btn {
+  font-size: .75rem;
+  font-weight: 700;
+  opacity: .75;
+}
+.toggle-btn:hover { opacity: 1; }
+</style>
+
+<div class="min-h-screen px-6 py-8 text-white">
+  <div class="glass-card admin-wrap p-8">
+
+    <header class="flex items-start justify-between mb-6">
+      <div>
+        <h2 class="text-3xl font-heading font-bold">
+          Admin · Seguiment alumnes
+        </h2>
+        <p class="text-gray-200 mt-1">
+          Activitat i assoliment per alumne (llindar 60%).
+        </p>
+      </div>
+      <a href="#/home"
+         class="bg-white/10 hover:bg-white/20 border border-white/10 px-4 py-2 rounded-xl font-semibold">
+        Inici
+      </a>
+    </header>
+
+    <!-- Llista d’alumnes -->
+    <section id="b2Out" class="space-y-4">
+      <!-- admin_b2.js pinta aquí -->
+    </section>
+
+  </div>
+</div>

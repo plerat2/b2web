@@ -1,0 +1,187 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap');
+
+#lect-root {
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0f2e1c, #081a12 65%);
+  color: #fff;
+}
+
+/* ───────── Header ───────── */
+.lect-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem 2.5rem 1.4rem;
+}
+
+.lect-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.lect-sub {
+  font-size: .75rem;
+  letter-spacing: .18em;
+  opacity: .6;
+  margin-top: .35rem;
+  text-transform: uppercase;
+}
+
+.lect-actions a {
+  font-size: .8rem;
+  font-weight: 700;
+  padding: .45rem .9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(255,255,255,.08);
+  color: white;
+  text-decoration: none;
+}
+
+/* ───────── Grid HUB ───────── */
+.lect-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+  padding: 2rem 2.5rem 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+  .lect-grid { grid-template-columns: 1fr; }
+}
+
+/* ───────── Cards ───────── */
+.lect-card {
+  position: relative;
+  border-radius: 28px;
+  padding: 2.4rem 2.2rem;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: linear-gradient(145deg,#14532d,#22c55e);
+  box-shadow: 0 28px 70px rgba(0,0,0,.45);
+  transition: transform .28s ease, box-shadow .28s ease, filter .28s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.lect-card.full {
+  grid-column: span 2;
+}
+
+.lect-card::after {
+  content:'';
+  position:absolute;
+  top:-60px;
+  right:-60px;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+}
+
+.lect-card:hover {
+  transform: translateY(-12px) scale(1.04);
+  box-shadow: 0 50px 110px rgba(0,0,0,.65);
+  filter: brightness(1.06);
+}
+
+/* ───────── Content ───────── */
+.lect-icon {
+  width:66px;
+  height:66px;
+  border-radius:20px;
+  background:rgba(255,255,255,.18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+}
+
+.lect-name {
+  font-family:'Syne',sans-serif;
+  font-size:1.25rem;
+  font-weight:800;
+}
+
+.lect-desc {
+  font-size:.82rem;
+  opacity:.85;
+  line-height:1.5;
+}
+
+.lect-link {
+  font-size:.75rem;
+  font-weight:700;
+  opacity:.85;
+}
+</style>
+
+<div id="lect-root">
+
+  <header class="lect-header">
+    <div>
+      <div class="lect-title">Lectures · Àrea 1</div>
+      <div class="lect-sub">Comprensió escrita</div>
+    </div>
+    <div class="lect-actions">
+      <a href="#/practica">Enrere</a>
+    </div>
+  </header>
+
+  <!-- HUB VISUAL (5 PROVES) -->
+  <section class="lect-grid">
+
+    <div class="lect-card">
+      <div class="lect-icon">📄</div>
+      <div class="lect-name">Prova 1</div>
+      <div class="lect-desc">Dos exercicis de comprensió escrita.</div>
+      <div class="lect-link">Comença →</div>
+    </div>
+
+    <div class="lect-card">
+      <div class="lect-icon">📄</div>
+      <div class="lect-name">Prova 2</div>
+      <div class="lect-desc">Dos exercicis de comprensió escrita.</div>
+      <div class="lect-link">Comença →</div>
+    </div>
+
+    <div class="lect-card">
+      <div class="lect-icon">📄</div>
+      <div class="lect-name">Prova 3</div>
+      <div class="lect-desc">Dos exercicis de comprensió escrita.</div>
+      <div class="lect-link">Comença →</div>
+    </div>
+
+    <div class="lect-card">
+      <div class="lect-icon">📄</div>
+      <div class="lect-name">Prova 4</div>
+      <div class="lect-desc">Dos exercicis de comprensió escrita.</div>
+      <div class="lect-link">Comença →</div>
+    </div>
+
+    <div class="lect-card full">
+      <div class="lect-icon">📄</div>
+      <div class="lect-name">Prova 5</div>
+      <div class="lect-desc">Dos exercicis de comprensió escrita.</div>
+      <div class="lect-link">Comença →</div>
+    </div>
+
+  </section>
+
+  <!-- CONTENIDORS FUNCIONALS (NO TOCAR) -->
+  <div id="a1Block1"></div>
+  <div id="a1Block2"></div>
+  <div id="a1Lectures"></div>
+  <button id="a1FinishBtn">Finalitzar</button>
+  <div id="a1Result"></div>
+
+</div>

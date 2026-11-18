@@ -1,0 +1,194 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap');
+
+#escrita-root {
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1f1300, #120b00 65%);
+  color: #fff;
+}
+
+/* ───────── Header ───────── */
+.escrita-header {
+  padding: 2rem 2.5rem 1.2rem;
+}
+
+.escrita-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.1rem, 5vw, 3rem);
+  font-weight: 800;
+}
+
+.escrita-sub {
+  font-size: .8rem;
+  opacity: .7;
+  margin-top: .4rem;
+  max-width: 680px;
+}
+
+/* ───────── Grid ───────── */
+.escrita-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+  padding: 1.5rem 2.5rem 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+  .escrita-grid { grid-template-columns: 1fr; }
+}
+
+/* ───────── Cards ───────── */
+.doc-card {
+  position: relative;
+  border-radius: 22px;
+  padding: 1.9rem 2rem;
+  background: linear-gradient(145deg,#78350f,#f59e0b);
+  box-shadow: 0 22px 55px rgba(0,0,0,.45);
+  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+  text-decoration: none;
+  color: white;
+}
+
+.doc-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 36px 80px rgba(0,0,0,.6);
+  filter: brightness(1.06);
+}
+
+/* ───────── Variants ───────── */
+.doc-card.available {
+  background: linear-gradient(145deg,#78350f,#f59e0b);
+}
+
+.doc-card.building {
+  background: linear-gradient(145deg,#3f3f46,#18181b);
+  opacity: .7;
+  cursor: default;
+}
+.doc-card.building:hover {
+  transform: none;
+  box-shadow: 0 22px 55px rgba(0,0,0,.45);
+  filter: none;
+}
+
+/* ───────── Content ───────── */
+.doc-icon {
+  font-size: 2.1rem;
+  margin-bottom: .7rem;
+}
+
+.doc-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.doc-desc {
+  font-size: .78rem;
+  opacity: .85;
+  line-height: 1.5;
+  margin-top: .4rem;
+}
+
+.doc-status {
+  margin-top: .9rem;
+  font-size: .72rem;
+  font-weight: 800;
+  opacity: .9;
+}
+
+.status-ok {
+  color: #bfdbfe;
+}
+
+.status-build {
+  color: #d4d4d8;
+}
+</style>
+
+<div id="escrita-root">
+
+  <header class="escrita-header">
+    <div class="escrita-title">Expressió escrita (Àrea 3)</div>
+    <div class="escrita-sub">
+      Guies i materials per preparar la redacció del nivell B2:
+      estructura, llengua, cohesió i tècnica.
+    </div>
+  </header>
+
+  <section class="escrita-grid">
+
+    <!-- ✅ Correu electrònic -->
+    <a class="doc-card available"
+       href="/docs/escrita/El missatge de correu electrònic2"
+       target="_blank">
+      <div class="doc-icon">📧</div>
+      <div class="doc-title">El correu electrònic (B2)</div>
+      <div class="doc-desc">
+        Estructura, fórmules i grau de formalitat del correu electrònic institucional.
+      </div>
+      <div class="doc-status status-ok">✅ Disponible</div>
+    </a>
+
+    <!-- ✅ Connectors -->
+    <a class="doc-card available"
+       href="/docs/escrita/b2_connectors"
+       target="_blank">
+      <div class="doc-icon">🔗</div>
+      <div class="doc-title">Connectors i marcadors textuals</div>
+      <div class="doc-desc">
+        Llista essencial de connectors per cohesionar textos (nivell B2).
+      </div>
+      <div class="doc-status status-ok">✅ Disponible</div>
+    </a>
+
+    <!-- ✅ Sol·licitud / carta formal -->
+    <a class="doc-card available"
+       href="/docs/escrita/la solicitud_llibre_estil_caib_2a_edicio_2018"
+       target="_blank">
+      <div class="doc-icon">📄</div>
+      <div class="doc-title">La sol·licitud i la carta formal</div>
+      <div class="doc-desc">
+        Model administratiu formal. Material de referència.
+      </div>
+      <div class="doc-status status-ok">✅ Disponible</div>
+    </a>
+
+    <!-- ✅ Tècniques d’expressió escrita -->
+    <a class="doc-card available"
+       href="/docs/escrita/tecniques_expressio_escrita_senzilla"
+       target="_blank">
+      <div class="doc-icon">🧠</div>
+      <div class="doc-title">Tècniques d’expressió escrita</div>
+      <div class="doc-desc">
+        Procés de redacció, planificació, estil, revisió i resums.
+      </div>
+      <div class="doc-status status-ok">✅ Disponible</div>
+    </a>
+
+    <!-- 🚧 Article d’opinió -->
+    <div class="doc-card building">
+      <div class="doc-icon">📝</div>
+      <div class="doc-title">L’article d’opinió (B2)</div>
+      <div class="doc-desc">
+        Estructura, connectors i exemples pràctics.
+      </div>
+      <div class="doc-status status-build">🚧 En construcció</div>
+    </div>
+
+    <!-- 🚧 Carta formal comentada -->
+    <div class="doc-card building">
+      <div class="doc-icon">✉️</div>
+      <div class="doc-title">Carta formal (model comentat)</div>
+      <div class="doc-desc">
+        Model guiat pas a pas amb comentaris.
+      </div>
+      <div class="doc-status status-build">🚧 En construcció</div>
+    </div>
+
+  </section>
+
+</div>

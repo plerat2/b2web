@@ -1,0 +1,110 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap');
+
+#a1-root {
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0f1c2e, #081427 65%);
+  color: #fff;
+}
+
+/* ───────── Header ───────── */
+.a1-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem 2.5rem 1.4rem;
+}
+
+.a1-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.a1-sub {
+  font-size: .75rem;
+  letter-spacing: .18em;
+  opacity: .6;
+  margin-top: .35rem;
+  text-transform: uppercase;
+}
+
+.a1-actions a {
+  font-size: .8rem;
+  font-weight: 700;
+  padding: .45rem .9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(255,255,255,.08);
+  color: white;
+  text-decoration: none;
+}
+
+/* ───────── Grid (JS hi pinta les convocatòries) ───────── */
+#a1List {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+  padding: 2rem 2.5rem 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+  #a1List { grid-template-columns: 1fr; }
+}
+
+/* ───────── Cards (aplicades als <a> generats pel JS) ───────── */
+#a1List a {
+  position: relative;
+  border-radius: 28px;
+  padding: 2.4rem 2.2rem;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: white;
+
+  background: linear-gradient(145deg,#1e3a8a,#2563eb);
+  box-shadow: 0 28px 70px rgba(0,0,0,.45);
+  transition: transform .28s ease, box-shadow .28s ease, filter .28s ease;
+  overflow: hidden;
+}
+
+#a1List a::after {
+  content:'';
+  position:absolute;
+  top:-60px;
+  right:-60px;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+}
+
+#a1List a:hover {
+  transform: translateY(-12px) scale(1.04);
+  box-shadow: 0 50px 110px rgba(0,0,0,.65);
+  filter: brightness(1.06);
+}
+</style>
+
+<div id="a1-root">
+
+  <header class="a1-header">
+    <div>
+      <div class="a1-title">Pràctica · Àrea 1 (Àudios)</div>
+      <div class="a1-sub">Comprensió oral</div>
+    </div>
+    <div class="a1-actions">
+      <a href="#/practica">Enrere</a>
+    </div>
+  </header>
+
+  <!-- JS EXISTENT HI PINTA LES CONVOCATÒRIES -->
+  <div id="a1List"></div>
+
+</div>

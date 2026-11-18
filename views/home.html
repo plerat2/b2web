@@ -1,0 +1,249 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap');
+
+#home-root {
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0f1c2e, #081427 65%);
+  color: #fff;
+}
+
+/* ───────── Header ───────── */
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem 2.5rem 1.4rem;
+}
+
+.home-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.home-sub {
+  font-size: .72rem;
+  letter-spacing: .18em;
+  opacity: .6;
+  margin-top: .35rem;
+  text-transform: uppercase;
+}
+
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: .45rem;
+}
+
+#who {
+  font-size: .78rem;
+  opacity: .75;
+  padding: .25rem .7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(255,255,255,.08);
+}
+
+.home-actions a {
+  font-size: .8rem;
+  font-weight: 700;
+  padding: .45rem .9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(255,255,255,.08);
+  color: white;
+  text-decoration: none;
+}
+
+/* ───────── Grid ───────── */
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  padding: 1.8rem 2.5rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .home-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+  .home-grid { grid-template-columns: 1fr; }
+}
+
+/* ───────── Cards ───────── */
+.home-card {
+  position: relative;
+  border-radius: 28px;
+  padding: 2.4rem 2.3rem;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 28px 70px rgba(0,0,0,.45);
+  transition: transform .28s ease, box-shadow .28s ease, filter .28s ease;
+  overflow: hidden;
+}
+
+.home-card::after {
+  content:'';
+  position:absolute;
+  top:-60px;
+  right:-60px;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+}
+
+.home-card:hover {
+  transform: translateY(-12px) scale(1.04);
+  box-shadow: 0 50px 110px rgba(0,0,0,.65);
+  filter: brightness(1.06);
+}
+
+/* ───────── Colors ───────── */
+.c-blue   { background: linear-gradient(145deg,#1e3a8a,#2563eb); }
+.c-green  { background: linear-gradient(145deg,#14532d,#22c55e); }
+.c-amber  { background: linear-gradient(145deg,#78350f,#f59e0b); }
+.c-teal   { background: linear-gradient(145deg,#134e4a,#14b8a6); }
+.c-violet { background: linear-gradient(145deg,#4c1d95,#8b5cf6); }
+.c-rose   { background: linear-gradient(145deg,#7f1d1d,#ef4444); }
+
+/* ───────── Card content ───────── */
+.card-icon {
+  width:66px;
+  height:66px;
+  border-radius:20px;
+  background:rgba(255,255,255,.18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+}
+
+.card-label {
+  font-size:.68rem;
+  letter-spacing:.16em;
+  opacity:.7;
+  font-weight:800;
+}
+
+.card-title {
+  font-family:'Syne',sans-serif;
+  font-size:1.2rem;
+  font-weight:800;
+  line-height:1.25;
+}
+
+.card-desc {
+  font-size:.78rem;
+  line-height:1.5;
+  opacity:.75;
+}
+
+.card-link {
+  font-size:.72rem;
+  font-weight:700;
+  opacity:.7;
+}
+.home-card:hover .card-link { opacity: .95; }
+
+/* ───────── Admin link ───────── */
+#adminLinkWrap {
+  margin: 1.6rem auto 0;
+  text-align: center;
+}
+#adminLinkWrap.hidden { display: none; }
+
+#adminLinkWrap a {
+  display: inline-block;
+  padding: .6rem 1.4rem;
+  border-radius: 16px;
+  border: 1px solid rgba(59,130,246,.45);
+  background: rgba(59,130,246,.15);
+  color: #bfdbfe;
+  font-weight: 800;
+  text-decoration: none;
+}
+</style>
+
+<div id="home-root">
+
+<header class="home-header">
+  <div>
+    <div class="home-title">CATALÀ B2</div>
+    <div class="home-sub">CEPA Llevant · Prepara la prova de nivell</div>
+  </div>
+
+  <div class="home-actions">
+    <div id="who"></div>
+    <a href="#/estadistica">Estadístiques</a>
+    <a id="logoutBtn" href="javascript:void(0)">Sortir →</a>  </div>
+</header>
+
+<section class="home-grid">
+
+  <a href="#/practica" class="home-card c-blue">
+    <div class="card-icon">🎧</div>
+    <div class="card-label">ÀREA 1</div>
+    <div class="card-title">Comprensió oral i lectora</div>
+    <div class="card-desc">Practica amb àudios i textos reals de les proves oficials.</div>
+    <div class="card-link">Accedeix →</div>
+  </a>
+
+  <a href="#/convocatories" class="home-card c-green">
+    <div class="card-icon">✍️</div>
+    <div class="card-label">ÀREA 2</div>
+    <div class="card-title">Domini lingüístic</div>
+    <div class="card-desc">Gramàtica, sintaxi, ortografia i lèxic de totes les convocatòries.</div>
+    <div class="card-link">Accedeix →</div>
+  </a>
+
+  <a href="#/entrenament" class="home-card c-amber">
+  <div class="card-icon">📝</div>
+  <div class="card-label">ÀREA 3</div>
+  <div class="card-title">Expressió escrita</div>
+  <div class="card-desc">
+    Redacció de textos formals i informals: correu, carta i article.
+  </div>
+  <div class="card-link">Accedeix →</div>
+</a>
+
+  <a href="#/recursos" class="home-card c-teal">
+    <div class="card-icon">📋</div>
+    <div class="card-label">GUIA</div>
+    <div class="card-title">Coneix la prova</div>
+    <div class="card-desc">Estructura i criteris del B2.</div>
+    <div class="card-link">Accedeix →</div>
+  </a>
+
+  <a href="#/estadistica" class="home-card c-violet">
+    <div class="card-icon">📊</div>
+    <div class="card-label">PROGRÉS</div>
+    <div class="card-title">Les meves estadístiques</div>
+    <div class="card-desc">Historial i evolució.</div>
+    <div class="card-link">Accedeix →</div>
+  </a>
+
+  <a href="#/consell" class="home-card c-rose">
+    <div class="card-icon">💡</div>
+    <div class="card-label">DIARI</div>
+    <div class="card-title">Consell del dia</div>
+    <div class="card-desc">Un truc diari de llengua.</div>
+    <div class="card-link">Accedeix →</div>
+  </a>
+
+</section>
+
+<div id="adminLinkWrap" class="hidden">
+  <a href="#/admin">🔐 Panell del professor</a>
+</div>
+
+</div>

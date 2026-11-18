@@ -1,0 +1,168 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap');
+
+#practica-root {
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0f1c2e, #081427 65%);
+  color: #fff;
+}
+
+/* ───────── Header ───────── */
+.practica-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem 2.5rem 1.4rem;
+}
+
+.practica-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.practica-sub {
+  font-size: .75rem;
+  letter-spacing: .18em;
+  opacity: .6;
+  margin-top: .35rem;
+  text-transform: uppercase;
+}
+
+.practica-actions a {
+  font-size: .8rem;
+  font-weight: 700;
+  padding: .45rem .9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(255,255,255,.08);
+  color: white;
+  text-decoration: none;
+}
+
+/* ───────── Grid ───────── */
+.practica-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 2rem 2.5rem 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+  .practica-grid { grid-template-columns: 1fr; }
+}
+
+/* ───────── Cards ───────── */
+.practica-card {
+  position: relative;
+  border-radius: 28px;
+  padding: 2.6rem 2.4rem;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: white;
+
+  box-shadow: 0 28px 70px rgba(0,0,0,.45);
+  transition: transform .28s ease, box-shadow .28s ease, filter .28s ease;
+  overflow: hidden;
+}
+
+.practica-card::after {
+  content:'';
+  position:absolute;
+  top:-60px;
+  right:-60px;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+}
+
+.practica-card:hover {
+  transform: translateY(-12px) scale(1.04);
+  box-shadow: 0 50px 110px rgba(0,0,0,.65);
+  filter: brightness(1.06);
+}
+
+/* ───────── Colors ───────── */
+.c-blue   { background: linear-gradient(145deg,#1e3a8a,#2563eb); }
+.c-teal   { background: linear-gradient(145deg,#134e4a,#14b8a6); }
+
+/* ───────── Content ───────── */
+.card-icon {
+  width:66px;
+  height:66px;
+  border-radius:20px;
+  background:rgba(255,255,255,.18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+}
+
+.card-title {
+  font-family:'Syne',sans-serif;
+  font-size:1.35rem;
+  font-weight:800;
+  line-height:1.25;
+}
+
+.card-desc {
+  font-size:.82rem;
+  line-height:1.5;
+  opacity:.8;
+}
+
+.card-link {
+  font-size:.75rem;
+  font-weight:700;
+  opacity:.8;
+}
+.practica-card:hover .card-link {
+  opacity:1;
+}
+</style>
+
+<div id="practica-root">
+
+  <header class="practica-header">
+    <div>
+      <div class="practica-title">Pràctica · Àrea 1</div>
+      <div class="practica-sub">Comprensió oral i escrita</div>
+    </div>
+    <div class="practica-actions">
+      <a href="#/home">Inici</a>
+    </div>
+  </header>
+
+  <section class="practica-grid">
+
+    <!-- 🎧 Àrea 1 Oral -->
+    <a href="#/practica/area1" class="practica-card c-blue">
+      <div class="card-icon">🎧</div>
+      <div class="card-title">Comprensió oral</div>
+      <div class="card-desc">
+        Àudios reals de prova: dues escoltes, preguntes juntes i format oficial.
+      </div>
+      <div class="card-link">Accedeix →</div>
+    </a>
+
+    <!-- 🗂️ Àrea 1 Escrita -->
+    <a href="#/practica/area1-lectora" class="practica-card c-teal">
+      <div class="card-icon">🗂️</div>
+      <div class="card-title">Comprensió escrita</div>
+      <div class="card-desc">
+        Textos de comprensió amb preguntes d’Àrea 1 i correcció immediata.
+      </div>
+      <div class="card-link">Accedeix →</div>
+    </a>
+
+  </section>
+
+</div>
