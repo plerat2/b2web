@@ -10,7 +10,7 @@ export const B2_A1_GEN25_LECTURES = {
     {
       "id": "B2_GEN25_L1",
       "titol": "Em sent irritable a la feina i tenc insomni: estic cremat? — Qui està cremat pateix cansament emocional, falta de realització personal i sentiments impersonals",
-      "pdf": "/docs/lectures/B2_a1_gen25_l1.pdf",
+      "pdf": "./docs/lectures/B2_a1_gen25_l1.pdf",
       "preguntes": [
         {
           "numero": 11,
@@ -77,7 +77,7 @@ export const B2_A1_GEN25_LECTURES = {
     {
       "id": "B2_GEN25_L2",
       "titol": "Sebastià Alzamora: «Volia explicar al meu amic mort a setze anys",
-      "pdf": "/docs/lectures/B2_a1_gen25_l2.pdf",
+      "pdf": "./docs/lectures/B2_a1_gen25_l2.pdf",
       "preguntes": [
         {
           "numero": 16,
