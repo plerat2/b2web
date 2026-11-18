@@ -9,7 +9,7 @@ export const B2_A1_MAIG25_LECTURES = {
     {
       "id": "B2_MAIG25_L1",
       "titol": "Els ibers tallaven els caps dels enemics, però també dels qui veneraven — Un estudi de la UAB mostra importants diferències territorials en els rituals ibers",
-      "pdf": "/docs/lectures/B2_a1_maig25_l1.pdf",
+      "pdf": "./docs/lectures/B2_a1_maig25_l1.pdf",
       "preguntes": [
         {
           "numero": 11,
@@ -71,7 +71,7 @@ export const B2_A1_MAIG25_LECTURES = {
     {
       "id": "B2_MAIG25_L2",
       "titol": "Els antibiòtics a la corda fluixa — Els bacteris aprenen dels antibiòtics que els estam administrant i troben formes de tornar-s’hi",
-      "pdf": "/docs/lectures/B2_a1_maig25_l2.pdf",
+      "pdf": "./docs/lectures/B2_a1_maig25_l2.pdf",
       "preguntes": [
         {
           "numero": 16,
