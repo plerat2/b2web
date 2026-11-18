@@ -9,7 +9,7 @@ export const B2_A1_GEN24_LECTURES = {
     {
       "id": "B2_GEN24_L1",
       "titol": "«Fora pantalles: cal tornar a llegir en paper i a escriure a mà»",
-      "pdf": "/docs/lectures/B2_a1_gen24_l1.pdf",
+      "pdf": "./docs/lectures/B2_a1_gen24_l1.pdf",
       "preguntes": [
         {
           "numero": 11,
@@ -71,7 +71,7 @@ export const B2_A1_GEN24_LECTURES = {
     {
       "id": "B2_GEN24_L2",
       "titol": "Per què es diagnostica menys l’autisme en les dones?",
-      "pdf": "/docs/lectures/B2_a1_gen24_l2.pdf",
+      "pdf": "./docs/lectures/B2_a1_gen24_l2.pdf",
       "preguntes": [
         {
           "numero": 16,
