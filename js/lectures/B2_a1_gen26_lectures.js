@@ -9,7 +9,7 @@ export const B2_A1_GEN26_LECTURES = {
     {
       "id": "B2_GEN26_L1",
       "titol": "Les sandàlies dels soldats romans: l’origen de l’expressió no tenir",
-      "pdf": "/docs/lectures/B2_a1_gen26_l1.pdf",
+      "pdf": "./docs/lectures/B2_a1_gen26_l1.pdf",
       "preguntes": [
         {
           "numero": 11,
@@ -71,7 +71,7 @@ export const B2_A1_GEN26_LECTURES = {
     {
       "id": "B2_GEN26_L2",
       "titol": "Entrevista a Janira Planes: la cultura d’Internet",
-      "pdf": "/docs/lectures/B2_a1_gen26_l2.pdf",
+      "pdf": "./docs/lectures/B2_a1_gen26_l2.pdf",
       "preguntes": [
         {
           "numero": 16,
