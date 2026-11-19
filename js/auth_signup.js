@@ -1,6 +1,9 @@
 import { auth } from './firebase.js';
 import { createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
+// Només es poden registrar correus d'aquest domini.
+const DOMINI_PERMES = '@cepallevant.eu';
+
 const form = document.getElementById('signup-form');
 const err = document.getElementById('signup-error');
 
@@ -18,13 +21,19 @@ form?.addEventListener('submit', async (e) => {
   e.preventDefault();
   hideError();
 
-  const email = document.getElementById('email')?.value?.trim() || '';
+  // El correu es passa a minúscules per evitar falsos rebutjos (p. ex. @CepaLlevant.eu).
+  const email = (document.getElementById('email')?.value?.trim() || '').toLowerCase();
   const password = document.getElementById('password')?.value || '';
   const password2 = document.getElementById('password2')?.value || '';
   const displayName = document.getElementById('displayName')?.value?.trim() || '';
 
   if (!email || !password || !password2) {
     showError('Omple tots els camps obligatoris.');
+    return;
+  }
+
+  if (!email.endsWith(DOMINI_PERMES)) {
+    showError('Només et pots registrar amb un correu ' + DOMINI_PERMES + '.');
     return;
   }
 
