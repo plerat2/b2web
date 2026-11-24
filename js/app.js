@@ -231,13 +231,41 @@ if (report.percentatge >= 60) {
   }
 
   const rows = report.errors.map(d => {
-    const enu = estat.preguntes[d.pregunta - 1]?.enunciat || '';
+    const q = estat.preguntes[d.pregunta - 1] || {};
+    const opcions = q.opcions || {};
+    const enBlanc = d.respostaUsuari === null || d.respostaUsuari === undefined;
+
+    // "A) text" (text ja escapat i amb negretes via boldify)
+    const etiqueta = (lletra) => {
+      if (lletra === null || lletra === undefined || opcions[lletra] === undefined) {
+        return escapeHtml(lletra ?? '');
+      }
+      return `${escapeHtml(String(lletra).toUpperCase())}) ${boldify(opcions[lletra])}`;
+    };
+
+    // Llista d'opcions amb ❌ (la triada, errònia) i ✅ (la correcta).
+    // En blanc no es mostra la llista: ja surt la resposta correcta a dalt.
+    const llistaOpcions = enBlanc ? '' : `
+        <div class="mt-3 space-y-1">
+          ${Object.entries(opcions)
+            .filter(([, text]) => String(text).trim() !== '')
+            .map(([lletra]) => {
+              const esCorrecta = lletra === d.respostaCorrecta;
+              const esTriada = lletra === d.respostaUsuari;
+              const marca = esCorrecta ? ' ✅' : (esTriada ? ' ❌' : '');
+              const cls = esCorrecta ? 'text-green-300 font-semibold'
+                        : esTriada ? 'text-red-300 font-semibold'
+                        : 'text-gray-200';
+              return `<div class="text-lg ${cls}">${etiqueta(lletra)}${marca}</div>`;
+            }).join('')}
+        </div>`;
+
     return `
       <div class="p-4 rounded-xl border border-red-300 bg-red-500/10">
-        <div class="font-bold text-lg mb-2">${d.pregunta}. ${escapeHtml(enu)}</div>
-        <div class="text-lg">La teva: <strong>${escapeHtml(d.respostaUsuari ?? '-')}</strong></div>
-        <div class="text-lg">Correcta: <strong>${escapeHtml(d.respostaCorrecta)}</strong></div>
-        <div class="text-sm text-gray-200 mt-1">Categoria: ${escapeHtml(d.categoria)}</div>
+        <div class="font-bold text-lg mb-3">${d.pregunta}. ${boldify(q.enunciat || '')}</div>
+        <div class="text-lg mb-1">La teva resposta:<br><strong>${enBlanc ? 'En blanc' : etiqueta(d.respostaUsuari)}</strong></div>
+        <div class="text-lg">Resposta correcta:<br><strong>${etiqueta(d.respostaCorrecta)}</strong></div>
+        ${llistaOpcions}
       </div>`;
   }).join('');
 
