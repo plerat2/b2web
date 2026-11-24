@@ -42,7 +42,11 @@ export function buildReport({ user, mode, convocatoria=null, preguntes, resposte
     }else{
       errors.push({
         pregunta: i+1,
-        id: String(q.id || ''),
+        id: q.id
+          ? String(q.id)
+          : (q.numero != null
+              ? ((convocatoria || q.convocatoria) ? `${convocatoria || q.convocatoria}-${q.numero}` : String(q.numero))
+              : ''),
         categoria: String(cat),
         respostaUsuari: (u === null || u === undefined) ? null : String(u),
         respostaCorrecta: String(q.resposta)
